@@ -1,3 +1,22 @@
-<p>
-  listing works!
-</p>
+<a [routerLink]="['/listings']">Go Back</a>
+<br>
+<div *ngIf="listing">
+	<h2 class="page-header">{{listing.title}}
+		<small>{{listing.city}}</small>
+	</h2>
+</div>
+	<div class="row" *ngIf="listing">
+		<div class="col-md-4"></div>
+		<div class="col-md-8">
+			<ul class="list-group">
+				<li class="list-group-item">Owner: {{listing.owner}}</li>
+				<li class="list-group-item">Bedrooms: {{listing.bedrooms}}</li>
+				<li class="list-group-item">Type: {{listing.typer}}</li>
+				<li class="list-group-item">Price: {{listing.price}}</li>
+			</ul>
+		</div>
+		<a class="btn btn-default">Edit</a>
+		<a class="btn btn-delete">Delete</a>
+	</div>
+
+ 
